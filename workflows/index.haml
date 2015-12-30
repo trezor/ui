@@ -1,0 +1,18 @@
+!!! 5
+%html
+  %head
+    %title TREZOR Workflows
+    %style(type="text/css")
+      img { border: 6px solid black; }
+  %body(bgcolor="#444" text="#ccc")
+
+    %h1 TREZOR Workflows
+
+    - get_items().each do |x|
+      %h2 #{x[:t]}
+      %img(src="images/home.png")
+      &rarr;
+      - (1..x[:c]).each do |i|
+        %img(src="images/#{x[:i]}#{'%02d' % i}.png")
+        &rarr;
+      %img(src="images/home.png")
